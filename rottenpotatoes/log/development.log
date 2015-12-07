@@ -863,3 +863,240 @@ Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:40:07 -0700
 
 
 Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:40:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDirectorToMovies (20151206202521)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "movies" ADD "director" varchar DEFAULT '' NOT NULL[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151206202521"]]
+  [1m[36m (19.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (78.9ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar DEFAULT '' NOT NULL) [0m
+  [1m[35m (35.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (33.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (23.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151206202521')
+  [1m[36m (19.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+
+
+Started GET "/assets/rails.png" for 155.225.108.106 at 2015-12-06 20:51:02 +0000
+
+
+Started GET "/movies" for 155.225.108.106 at 2015-12-06 20:51:10 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (82.6ms)
+Completed 200 OK in 491ms (Views: 354.0ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-06 20:51:11 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-06 20:51:11 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-06 20:51:11 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-06 20:51:11 +0000
+
+
+Started GET "/movies/1" for 155.225.108.106 at 2015-12-06 20:51:20 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.6ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 78ms (Views: 56.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-06 20:51:20 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-06 20:51:20 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-06 20:51:20 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-06 20:51:20 +0000
+
+
+Started GET "/assets/rails.png" for 155.225.108.106 at 2015-12-07 03:04:15 +0000
+
+
+Started GET "/movies" for 155.225.108.106 at 2015-12-07 03:04:17 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (56.4ms)
+Completed 200 OK in 226ms (Views: 137.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:04:18 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:04:18 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:04:18 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:04:18 +0000
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:04:24 +0000
+
+
+Started GET "/movies/new" for 155.225.108.106 at 2015-12-07 03:05:11 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (94.3ms)
+Completed 200 OK in 126ms (Views: 125.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:05:11 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:05:11 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:05:11 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:05:11 +0000
+
+
+Started POST "/movies" for 155.225.108.106 at 2015-12-07 03:06:15 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"53GPJdVA7SRvFM5rnMUu9V4Qhk70oShHit17PS5TACnVhFNR98iIYgP5+iHos1SaUIaUVrKvj5oQR9DwDkS3lQ==", "movie"=>{"title"=>"24 Hours", "rating"=>"G", "release_date(1i)"=>"2015", "release_date(2i)"=>"12", "release_date(3i)"=>"7"}, "commit"=>"Save Changes"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "24 Hours"], ["rating", "G"], ["release_date", "2015-12-07 00:00:00.000000"], ["created_at", "2015-12-07 03:06:15.857153"], ["updated_at", "2015-12-07 03:06:15.857153"]]
+  [1m[35m (11.1ms)[0m  commit transaction
+Redirected to https://csci-420-saasbook-ike-clinton.c9.io/movies
+Completed 302 Found in 31ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/movies" for 155.225.108.106 at 2015-12-07 03:06:16 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (10.6ms)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:06:16 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:06:16 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:06:16 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:06:16 +0000
+
+
+Started GET "/movies/new" for 155.225.108.106 at 2015-12-07 03:09:39 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (67.0ms)
+Completed 200 OK in 512ms (Views: 511.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:09:40 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:09:40 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:09:40 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:09:40 +0000
+
+
+Started GET "/movies" for 155.225.108.106 at 2015-12-07 03:13:11 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.9ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (88.3ms)
+Completed 200 OK in 559ms (Views: 433.0ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:13:12 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:12 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:12 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:12 +0000
+
+
+Started GET "/movies/1" for 155.225.108.106 at 2015-12-07 03:13:13 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 46ms (Views: 34.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:13 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:13 +0000
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:13:13 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:13 +0000
+
+
+Started GET "/movies/1" for 155.225.108.106 at 2015-12-07 03:13:49 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:13:49 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:49 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:49 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:13:49 +0000
+
+
+Started DELETE "/movies/1" for 155.225.108.106 at 2015-12-07 03:14:54 +0000
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rTJ5lKoTC+moZ5oh4/GT9YGh3CndpGVNRqlAw5nCKEqfx6XgiJtur8SKrmuXh+majzfOMZuqwpDcM+sOudWf9g==", "id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  [1m[35m (10.6ms)[0m  commit transaction
+Redirected to https://csci-420-saasbook-ike-clinton.c9.io/movies
+Completed 302 Found in 142ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/movies" for 155.225.108.106 at 2015-12-07 03:14:55 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (2.6ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (40.1ms)
+Completed 200 OK in 370ms (Views: 366.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.108.106 at 2015-12-07 03:14:55 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:14:55 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:14:55 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.108.106 at 2015-12-07 03:14:55 +0000
